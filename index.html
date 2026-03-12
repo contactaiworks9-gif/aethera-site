@@ -1,261 +1,622 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AETHERA – Timeless Luxury</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>AETHERA – Ultra Luxury Interiors | Delhi Exclusive</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root { --gold: #D4AF37; }
+    :root {
+      --gold: #D4AF37;
+      --dark: #0a0a0a;
+      --surface: #111111;
+      --border: #222222;
+      --text: #f5f5f5;
+      --muted: #aaaaaa;
+    }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: #000;
-      color: #f5f5f5;
-      line-height: 1.6;
-      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
+      background:#000;
+      color:var(--text);
+      line-height:1.7;
+      scroll-behavior: smooth;
     }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
-
+    h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight:500; }
     nav {
-      position: fixed; top: 0; width: 100%;
-      background: rgba(11,11,11,0.92);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10,10,10,0.95);
       backdrop-filter: blur(20px);
-      padding: 1.4rem 0;
+      padding: 1.5rem 0;
       text-align: center;
-      z-index: 9999;
-      border-bottom: 1px solid #222;
+      z-index: 10000;
+      border-bottom: 1px solid var(--border);
     }
     nav a {
       color: var(--gold);
-      margin: 0 2rem;
+      margin: 0 1.5rem;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: 1px;
       transition: all 0.4s;
     }
-    nav a:hover { color: white; transform: translateY(-2px); }
+    nav a:hover { color: #fff; transform: translateY(-2px); }
 
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: linear-gradient(135deg, #0a0a0a, #000);
-      position: relative;
-      overflow: hidden;
-    }
-    header::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(circle at center, rgba(212,175,55,0.12) 0%, transparent 70%);
-      animation: glow 8s infinite alternate;
-    }
-    h1 {
-      font-size: clamp(3.5rem, 10vw, 8rem);
-      color: var(--gold);
-      letter-spacing: -3px;
-      line-height: 1.05;
-      animation: fadeInUp 1.5s ease;
-    }
-    .tagline {
-      font-size: clamp(1.5rem, 4.5vw, 2.4rem);
-      color: #ccc;
-      max-width: 780px;
-      margin: 2rem auto;
-      animation: fadeInUp 2s ease;
-    }
-    .btn {
-      padding: 1.2rem 3.2rem;
-      background: var(--gold);
-      color: #000;
-      font-weight: 700;
-      border-radius: 999px;
-      text-decoration: none;
-      margin: 1rem;
-      transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
-      display: inline-block;
-    }
-    .btn:hover { transform: scale(1.08) translateY(-6px); box-shadow: 0 20px 40px rgba(212,175,55,0.4); }
-
-    section#collection {
-      padding: 8rem 1.5rem;
-      max-width: 1400px;
+    section {
+      padding: 12rem 2rem 6rem;
+      max-width: 1600px;
       margin: 0 auto;
     }
     h2 {
       text-align: center;
-      font-size: clamp(3rem, 7vw, 5rem);
+      font-size: clamp(3.5rem, 8vw, 6.5rem);
       color: var(--gold);
       margin-bottom: 5rem;
     }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, var(--dark), #000);
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(212,175,55,0.18) 0%, transparent 70%);
+      animation: pulseGlow 15s infinite alternate;
+    }
+    .hero h1 {
+      font-size: clamp(5rem, 14vw, 11rem);
+      color: var(--gold);
+      letter-spacing: -5px;
+      line-height: 0.9;
+      margin-bottom: 1.5rem;
+      animation: fadeIn 2.5s ease-out;
+    }
+    .hero .tagline {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      color: var(--muted);
+      max-width: 1000px;
+      margin-bottom: 4rem;
+    }
+    .btn {
+      padding: 1.4rem 4rem;
+      background: var(--gold);
+      color: #000;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
+      box-shadow: 0 10px 30px rgba(212,175,55,0.35);
+    }
+    .btn:hover {
+      transform: translateY(-10px) scale(1.07);
+      box-shadow: 0 30px 70px rgba(212,175,55,0.55);
+    }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 4rem;
     }
     .card {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
       overflow: hidden;
-      transition: all 0.6s cubic-bezier(0.23,1,0.32,1);
+      transition: all 0.7s cubic-bezier(0.23,1,0.32,1);
       cursor: pointer;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1.2s forwards;
     }
     .card:hover {
-      transform: translateY(-25px) scale(1.04);
-      box-shadow: 0 40px 80px rgba(212,175,55,0.3);
+      transform: translateY(-30px) scale(1.05);
+      box-shadow: 0 50px 100px rgba(212,175,55,0.35);
       border-color: var(--gold);
     }
     .card img {
       width: 100%;
-      height: 320px;
+      height: 380px;
       object-fit: cover;
-      transition: transform 0.8s ease;
+      transition: transform 0.9s ease;
     }
-    .card:hover img { transform: scale(1.12); }
+    .card:hover img { transform: scale(1.15); }
     .card-content {
-      padding: 2rem;
+      padding: 2.5rem 2rem;
       text-align: center;
     }
-    .card h3 { font-size: 1.75rem; margin-bottom: 0.8rem; }
-    .price { font-size: 1.85rem; color: var(--gold); font-weight: 700; }
+    .card h3 { font-size: 2rem; margin-bottom: 1rem; }
+    .price { font-size: 2.2rem; color: var(--gold); font-weight: 700; margin: 1rem 0; }
 
-    /* MODAL */
+    .about-content {
+      font-size: 1.4rem;
+      color: #ddd;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .about-content p { margin: 2rem 0; }
+
     .modal {
-      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.95); z-index: 10000; align-items: center; justify-content: center;
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.96);
+      z-index: 20000;
+      align-items: center;
+      justify-content: center;
     }
     .modal-content {
-      background: #111; max-width: 620px; width: 90%; border-radius: 20px;
-      padding: 2rem; border: 1px solid var(--gold);
+      background: var(--surface);
+      max-width: 800px;
+      width: 92%;
+      border-radius: 32px;
+      padding: 4rem 3rem;
+      border: 1px solid var(--gold);
+      position: relative;
     }
-    .close { float: right; font-size: 2rem; cursor: pointer; color: var(--gold); }
+    .close {
+      position: absolute;
+      top: 2rem;
+      right: 3rem;
+      font-size: 4rem;
+      color: var(--gold);
+      cursor: pointer;
+    }
 
     footer {
       text-align: center;
-      padding: 6rem 1rem;
+      padding: 8rem 2rem 4rem;
       background: #000;
       color: #777;
+      font-size: 1.1rem;
     }
 
-    @keyframes fadeInUp { from { opacity:0; transform:translateY(60px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes glow { 0% { opacity: 0.6; } 100% { opacity: 1; } }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+    @keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
+    @keyframes pulseGlow { 0% { opacity:0.6; } 100% { opacity:1; } }
+
+    @media (max-width: 768px) {
+      section { padding: 10rem 1.5rem 4rem; }
+      .grid { gap: 3rem; }
+      .card img { height: 320px; }
+    }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="#collection">Collection</a>
-    <a href="about.html">Our Story</a>
-    <a href="#">Enquire</a>
+    <a href="#hero">Home</a>
+    <a href="#inventory">Inventory (50 Pieces)</a>
+    <a href="#about">Our Story</a>
   </nav>
 
-  <header>
+  <!-- Hero -->
+  <section id="hero" class="hero">
     <div>
-      <h1>DESIGNED FOR LIGHT.<br>BUILT FOR LIFE.</h1>
-      <p class="tagline">Ultra-luxury furniture & lighting, handcrafted for the world's most discerning homes.</p>
-      <a href="#collection" class="btn">Explore the Collection</a>
+      <h1>AETHERA</h1>
+      <p class="tagline">Delhi NCR's Pinnacle of Ultra-Luxury Living – Timeless Craftsmanship for Discerning Homes</p>
+      <a href="#inventory" class="btn">Explore the Full Collection</a>
     </div>
-  </header>
+  </section>
 
-  <section id="collection">
-    <h2>Signature Collection</h2>
+  <!-- Inventory: 50 Products -->
+  <section id="inventory">
+    <h2>Signature Collection – 50 Masterpieces</h2>
     <div class="grid">
 
       <div class="card" onclick="showModal(0)">
-        <img src="https://picsum.photos/id/1015/800/600" alt="Zénith Chandelier">
+        <img src="https://picsum.photos/id/1015/1200/900" alt="Zénith Crystal Chandelier">
         <div class="card-content">
-          <h3>AETHERA ZÉNITH CHANDELIER</h3>
-          <p>Baccarat-inspired crystal with 24K gold</p>
-          <div class="price">₹12,99,900</div>
+          <h3>Zénith Crystal Chandelier</h3>
+          <div class="price">₹1,45,00,000</div>
         </div>
       </div>
 
       <div class="card" onclick="showModal(1)">
-        <img src="https://picsum.photos/id/160/800/600" alt="Orbit Sofa">
+        <img src="https://picsum.photos/id/160/1200/900" alt="Orbit Modular Sofa">
         <div class="card-content">
-          <h3>AETHERA ORBIT SOFA</h3>
-          <p>Italian full-grain leather, Roche Bobois inspired</p>
-          <div class="price">₹5,99,900</div>
+          <h3>Orbit Modular Sofa</h3>
+          <div class="price">₹8,90,000</div>
         </div>
       </div>
 
       <div class="card" onclick="showModal(2)">
-        <img src="https://picsum.photos/id/201/800/600" alt="Nova Dining">
+        <img src="https://picsum.photos/id/201/1200/900" alt="Nova Marble Dining Table">
         <div class="card-content">
-          <h3>AETHERA NOVA DINING TABLE</h3>
-          <p>Calacatta marble with gold inlay</p>
-          <div class="price">₹6,49,900</div>
+          <h3>Nova Marble Dining Table</h3>
+          <div class="price">₹9,50,000</div>
         </div>
       </div>
 
       <div class="card" onclick="showModal(3)">
-        <img src="https://picsum.photos/id/237/800/600" alt="Aura Armchair">
+        <img src="https://picsum.photos/id/237/1200/900" alt="Aura Armchair">
         <div class="card-content">
-          <h3>AETHERA AURA ARMCHAIR</h3>
-          <p>Poltrona Frau leather, hand-stitched</p>
-          <div class="price">₹2,99,900</div>
+          <h3>Aura Armchair</h3>
+          <div class="price">₹4,20,000</div>
         </div>
       </div>
 
       <div class="card" onclick="showModal(4)">
-        <img src="https://picsum.photos/id/29/800/600" alt="Veil Console">
+        <img src="https://picsum.photos/id/29/1200/900" alt="Veil Console Table">
         <div class="card-content">
-          <h3>AETHERA VEIL CONSOLE</h3>
-          <p>Brushed brass & black marble</p>
-          <div class="price">₹3,49,900</div>
+          <h3>Veil Console Table</h3>
+          <div class="price">₹5,80,000</div>
         </div>
       </div>
 
       <div class="card" onclick="showModal(5)">
-        <img src="https://picsum.photos/id/251/800/600" alt="Arc Bed">
+        <img src="https://picsum.photos/id/251/1200/900" alt="Arc King Bed">
         <div class="card-content">
-          <h3>AETHERA ARC KING BED</h3>
-          <p>Hand-carved walnut with integrated lighting</p>
-          <div class="price">₹7,49,900</div>
+          <h3>Arc King Bed</h3>
+          <div class="price">₹11,20,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(6)">
+        <img src="https://picsum.photos/id/1080/1200/900" alt="Bubble Curve Sofa">
+        <div class="card-content">
+          <h3>Bubble Curve Sofa</h3>
+          <div class="price">₹10,50,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(7)">
+        <img src="https://picsum.photos/id/106/1200/900" alt="Calacatta Grand Dining Table">
+        <div class="card-content">
+          <h3>Calacatta Grand Dining Table</h3>
+          <div class="price">₹12,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(8)">
+        <img src="https://picsum.photos/id/175/1200/900" alt="Elysian Armchair">
+        <div class="card-content">
+          <h3>Elysian Armchair</h3>
+          <div class="price">₹5,60,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(9)">
+        <img src="https://picsum.photos/id/180/1200/900" alt="Lumina Cascade Chandelier">
+        <div class="card-content">
+          <h3>Lumina Cascade Chandelier</h3>
+          <div class="price">₹85,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(10)">
+        <img src="https://picsum.photos/id/104/1200/900" alt="Regal Tufted King Bed">
+        <div class="card-content">
+          <h3>Regal Tufted King Bed</h3>
+          <div class="price">₹9,80,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(11)">
+        <img src="https://picsum.photos/id/1069/1200/900" alt="Opal Onyx Console">
+        <div class="card-content">
+          <h3>Opal Onyx Console</h3>
+          <div class="price">₹6,20,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(12)">
+        <img src="https://picsum.photos/id/108/1200/900" alt="Eclipse L-Shape Sofa">
+        <div class="card-content">
+          <h3>Eclipse L-Shape Sofa</h3>
+          <div class="price">₹7,40,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(13)">
+        <img src="https://picsum.photos/id/133/1200/900" alt="Aurora Starburst Chandelier">
+        <div class="card-content">
+          <h3>Aurora Starburst Chandelier</h3>
+          <div class="price">₹92,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(14)">
+        <img src="https://picsum.photos/id/102/1200/900" alt="Velvet Throne Armchair">
+        <div class="card-content">
+          <h3>Velvet Throne Armchair</h3>
+          <div class="price">₹3,90,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(15)">
+        <img src="https://picsum.photos/id/103/1200/900" alt="Imperial 12-Seater Dining">
+        <div class="card-content">
+          <h3>Imperial 12-Seater Dining</h3>
+          <div class="price">₹11,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(16)">
+        <img src="https://picsum.photos/id/50/1200/900" alt="Golden Mirage Chandelier">
+        <div class="card-content">
+          <h3>Golden Mirage Chandelier</h3>
+          <div class="price">₹68,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(17)">
+        <img src="https://picsum.photos/id/52/1200/900" alt="Monarch Wingback Chair">
+        <div class="card-content">
+          <h3>Monarch Wingback Chair</h3>
+          <div class="price">₹4,80,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(18)">
+        <img src="https://picsum.photos/id/64/1200/900" alt="Serenity Cloud Sofa">
+        <div class="card-content">
+          <h3>Serenity Cloud Sofa</h3>
+          <div class="price">₹9,20,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(19)">
+        <img src="https://picsum.photos/id/70/1200/900" alt="Prism Cascade Chandelier">
+        <div class="card-content">
+          <h3>Prism Cascade Chandelier</h3>
+          <div class="price">₹78,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(20)">
+        <img src="https://picsum.photos/id/74/1200/900" alt="Ebony & Brass Console">
+        <div class="card-content">
+          <h3>Ebony & Brass Console</h3>
+          <div class="price">₹7,10,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(21)">
+        <img src="https://picsum.photos/id/81/1200/900" alt="Majestic Canopy Bed">
+        <div class="card-content">
+          <h3>Majestic Canopy Bed</h3>
+          <div class="price">₹13,50,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(22)">
+        <img src="https://picsum.photos/id/85/1200/900" alt="Diamond Dust Chandelier">
+        <div class="card-content">
+          <h3>Diamond Dust Chandelier</h3>
+          <div class="price">₹1,12,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(23)">
+        <img src="https://picsum.photos/id/91/1200/900" alt="Platinum Curve Sofa">
+        <div class="card-content">
+          <h3>Platinum Curve Sofa</h3>
+          <div class="price">₹8,40,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(24)">
+        <img src="https://picsum.photos/id/96/1200/900" alt="Onyx Emperor Dining">
+        <div class="card-content">
+          <h3>Onyx Emperor Dining</h3>
+          <div class="price">₹14,20,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(25)">
+        <img src="https://picsum.photos/id/98/1200/900" alt="Sovereign Lounge Chair">
+        <div class="card-content">
+          <h3>Sovereign Lounge Chair</h3>
+          <div class="price">₹6,30,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(26)">
+        <img src="https://picsum.photos/id/106/1200/900" alt="Eternal Flame Chandelier">
+        <div class="card-content">
+          <h3>Eternal Flame Chandelier</h3>
+          <div class="price">₹95,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(27)">
+        <img src="https://picsum.photos/id/107/1200/900" alt="Sapphire Velvet Sofa">
+        <div class="card-content">
+          <h3>Sapphire Velvet Sofa</h3>
+          <div class="price">₹9,80,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(28)">
+        <img src="https://picsum.photos/id/109/1200/900" alt="Obsidian Floating Console">
+        <div class="card-content">
+          <h3>Obsidian Floating Console</h3>
+          <div class="price">₹7,90,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(29)">
+        <img src="https://picsum.photos/id/112/1200/900" alt="Royal Crown Bed">
+        <div class="card-content">
+          <h3>Royal Crown Bed</h3>
+          <div class="price">₹12,80,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(30)">
+        <img src="https://picsum.photos/id/116/1200/900" alt="Celestial Tier Chandelier">
+        <div class="card-content">
+          <h3>Celestial Tier Chandelier</h3>
+          <div class="price">₹1,08,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(31)">
+        <img src="https://picsum.photos/id/120/1200/900" alt="Harmony Sectional Sofa">
+        <div class="card-content">
+          <h3>Harmony Sectional Sofa</h3>
+          <div class="price">₹8,10,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(32)">
+        <img src="https://picsum.photos/id/124/1200/900" alt="Marble Monarch Table">
+        <div class="card-content">
+          <h3>Marble Monarch Table</h3>
+          <div class="price">₹10,90,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(33)">
+        <img src="https://picsum.photos/id/129/1200/900" alt="Empress Wing Chair">
+        <div class="card-content">
+          <h3>Empress Wing Chair</h3>
+          <div class="price">₹5,10,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(34)">
+        <img src="https://picsum.photos/id/132/1200/900" alt="Radiant Prism Chandelier">
+        <div class="card-content">
+          <h3>Radiant Prism Chandelier</h3>
+          <div class="price">₹89,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(35)">
+        <img src="https://picsum.photos/id/136/1200/900" alt="Midnight Luxe Sofa">
+        <div class="card-content">
+          <h3>Midnight Luxe Sofa</h3>
+          <div class="price">₹7,90,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(36)">
+        <img src="https://picsum.photos/id/140/1200/900" alt="Ebony & Gold Console">
+        <div class="card-content">
+          <h3>Ebony & Gold Console</h3>
+          <div class="price">₹6,80,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(37)">
+        <img src="https://picsum.photos/id/144/1200/900" alt="Palace Canopy Bed">
+        <div class="card-content">
+          <h3>Palace Canopy Bed</h3>
+          <div class="price">₹14,50,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(38)">
+        <img src="https://picsum.photos/id/148/1200/900" alt="Infinity Crystal Chandelier">
+        <div class="card-content">
+          <h3>Infinity Crystal Chandelier</h3>
+          <div class="price">₹1,18,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(39)">
+        <img src="https://picsum.photos/id/152/1200/900" alt="Crimson Velvet Sofa">
+        <div class="card-content">
+          <h3>Crimson Velvet Sofa</h3>
+          <div class="price">₹9,30,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(40)">
+        <img src="https://picsum.photos/id/156/1200/900" alt="Onyx Royal Dining">
+        <div class="card-content">
+          <h3>Onyx Royal Dining</h3>
+          <div class="price">₹13,20,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(41)">
+        <img src="https://picsum.photos/id/160/1200/900" alt="Diamond Tuft Armchair">
+        <div class="card-content">
+          <h3>Diamond Tuft Armchair</h3>
+          <div class="price">₹5,70,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(42)">
+        <img src="https://picsum.photos/id/164/1200/900" alt="Nova Galaxy Chandelier">
+        <div class="card-content">
+          <h3>Nova Galaxy Chandelier</h3>
+          <div class="price">₹99,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(43)">
+        <img src="https://picsum.photos/id/168/1200/900" alt="Pearl Sectional Sofa">
+        <div class="card-content">
+          <h3>Pearl Sectional Sofa</h3>
+          <div class="price">₹8,70,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(44)">
+        <img src="https://picsum.photos/id/172/1200/900" alt="Titan Marble Console">
+        <div class="card-content">
+          <h3>Titan Marble Console</h3>
+          <div class="price">₹7,50,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(45)">
+        <img src="https://picsum.photos/id/176/1200/900" alt="Emperor Four-Poster Bed">
+        <div class="card-content">
+          <h3>Emperor Four-Poster Bed</h3>
+          <div class="price">₹15,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(46)">
+        <img src="https://picsum.photos/id/180/1200/900" alt="Eternal Light Chandelier">
+        <div class="card-content">
+          <h3>Eternal Light Chandelier</h3>
+          <div class="price">₹1,25,00,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(47)">
+        <img src="https://picsum.photos/id/184/1200/900" alt="Royal Indigo Sofa">
+        <div class="card-content">
+          <h3>Royal Indigo Sofa</h3>
+          <div class="price">₹9,60,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(48)">
+        <img src="https://picsum.photos/id/188/1200/900" alt="Obsidian Elite Dining">
+        <div class="card-content">
+          <h3>Obsidian Elite Dining</h3>
+          <div class="price">₹12,90,000</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(49)">
+        <img src="https://picsum.photos/id/192/1200/900" alt="Crown Jewel Armchair">
+        <div class="card-content">
+          <h3>Crown Jewel Armchair</h3>
+          <div class="price">₹6,10,000</div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- SIMPLE MODAL -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">×</span>
-      <div id="modal-body"></div>
-    </div>
-  </div>
-
-  <footer>
-    © 2026 AETHERA • Hyderabad • Crafted for those who accept only the finest
-  </footer>
-
-  <script>
-    const products = [
-      {title:"AETHERA ZÉNITH CHANDELIER", price:"₹12,99,900", desc:"Hand-blown crystal with 24K gold accents. Inspired by Baccarat.", specs:"24 lights • Crystal • Gold finish"},
-      {title:"AETHERA ORBIT SOFA", price:"₹5,99,900", desc:"Full-grain Italian leather. Roche Bobois level comfort.", specs:"3-seater • Modular • Lifetime leather warranty"},
-      {title:"AETHERA NOVA DINING TABLE", price:"₹6,49,900", desc:"Calacatta marble top with solid brass base.", specs:"Seats 8–10 • Imported marble"},
-      {title:"AETHERA AURA ARMCHAIR", price:"₹2,99,900", desc:"Poltrona Frau leather, hand-stitched.", specs:"Ergonomic • Solid walnut legs"},
-      {title:"AETHERA VEIL CONSOLE", price:"₹3,49,900", desc:"Brushed brass frame with black marble top.", specs:"Floating design • Hidden storage"},
-      {title:"AETHERA ARC KING BED", price:"₹7,49,900", desc:"Hand-carved walnut with integrated LED lighting.", specs:"King size • Built-in reading lights"}
-    ];
-
-    function showModal(i) {
-      const p = products[i];
-      document.getElementById('modal-body').innerHTML = `
-        <h2 style="color:#D4AF37; margin-bottom:1rem;">${p.title}</h2>
-        <p style="font-size:1.3rem; margin:1rem 0;">${p.desc}</p>
-        <p style="font-size:2.2rem; color:#D4AF37; font-weight:700;">${p.price}</p>
-        <p style="margin:1.5rem 0; color:#aaa;">${p.specs}</p>
-        <button onclick="alert('Enquiry sent! Our team will contact you shortly.')" style="width:100%; padding:1rem; background:#D4AF37; color:#000; border:none; border-radius:999px; font-weight:700; font-size:1.1rem;">Enquire Now</button>
-      `;
-      document.getElementById('modal').style.display = 'flex';
-    }
-    function closeModal() {
-      document.getElementById('modal').style.display = 'none';
-    }
-  </script>
-</body>
-</html>
+  <!-- About -->
+  <section id="about">
+    <h2>Our Lega
