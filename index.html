@@ -1,234 +1,261 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AETHERA – Luxury Technology</title>
+  <title>AETHERA – Timeless Luxury</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    :root { --gold: #D4AF37; }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       background: #000;
       color: #f5f5f5;
       line-height: 1.6;
       overflow-x: hidden;
     }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
     nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.8);
-      backdrop-filter: blur(10px);
-      padding: 1rem;
+      position: fixed; top: 0; width: 100%;
+      background: rgba(11,11,11,0.92);
+      backdrop-filter: blur(20px);
+      padding: 1.4rem 0;
       text-align: center;
-      z-index: 1000;
-      border-bottom: 1px solid #1f1f1f;
+      z-index: 9999;
+      border-bottom: 1px solid #222;
     }
     nav a {
-      color: #D4AF37;
-      margin: 0 1.5rem;
+      color: var(--gold);
+      margin: 0 2rem;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.4s;
+      letter-spacing: 1px;
+      transition: all 0.4s;
     }
-    nav a:hover { color: white; }
+    nav a:hover { color: white; transform: translateY(-2px); }
 
     header {
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 0 1.5rem;
-      background: linear-gradient(135deg, #0b0b0b 0%, #000 100%);
+      background: linear-gradient(135deg, #0a0a0a, #000);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at center, rgba(212,175,55,0.12) 0%, transparent 70%);
+      animation: glow 8s infinite alternate;
     }
     h1 {
-      font-size: clamp(2.8rem, 8vw, 6rem);
-      color: #D4AF37;
-      letter-spacing: -0.05em;
-      margin-bottom: 1rem;
-      animation: fadeInUp 1.2s ease-out;
+      font-size: clamp(3.5rem, 10vw, 8rem);
+      color: var(--gold);
+      letter-spacing: -3px;
+      line-height: 1.05;
+      animation: fadeInUp 1.5s ease;
     }
     .tagline {
-      font-size: clamp(1.3rem, 4vw, 2rem);
-      color: #aaa;
-      max-width: 700px;
-      margin-bottom: 3rem;
-      animation: fadeInUp 1.4s ease-out;
+      font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+      color: #ccc;
+      max-width: 780px;
+      margin: 2rem auto;
+      animation: fadeInUp 2s ease;
     }
     .btn {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      margin: 0.8rem;
-      background: #D4AF37;
+      padding: 1.2rem 3.2rem;
+      background: var(--gold);
       color: #000;
+      font-weight: 700;
+      border-radius: 999px;
       text-decoration: none;
-      border-radius: 50px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: all 0.4s ease;
-      box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+      margin: 1rem;
+      transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
+      display: inline-block;
     }
-    .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(212,175,55,0.5);
-      background: #fff;
-    }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid #D4AF37;
-      color: #D4AF37;
-    }
-    .btn-outline:hover {
-      background: #D4AF37;
-      color: #000;
-    }
+    .btn:hover { transform: scale(1.08) translateY(-6px); box-shadow: 0 20px 40px rgba(212,175,55,0.4); }
 
-    section.products {
-      padding: 6rem 1.5rem;
+    section#collection {
+      padding: 8rem 1.5rem;
       max-width: 1400px;
       margin: 0 auto;
     }
     h2 {
       text-align: center;
-      font-size: clamp(2.5rem, 6vw, 4rem);
-      color: #D4AF37;
-      margin-bottom: 4rem;
-      animation: fadeInUp 1s ease-out;
+      font-size: clamp(3rem, 7vw, 5rem);
+      color: var(--gold);
+      margin-bottom: 5rem;
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 3rem;
     }
     .card {
-      background: #121212;
-      border: 1px solid #1f1f1f;
-      border-radius: 1.2rem;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 20px;
       overflow: hidden;
-      transition: all 0.5s ease;
-      position: relative;
-      animation: fadeInUp 1s ease-out forwards;
-      opacity: 0;
+      transition: all 0.6s cubic-bezier(0.23,1,0.32,1);
+      cursor: pointer;
     }
-    .card:nth-child(1) { animation-delay: 0.2s; }
-    .card:nth-child(2) { animation-delay: 0.4s; }
-    .card:nth-child(3) { animation-delay: 0.6s; }
-    .card:nth-child(4) { animation-delay: 0.8s; }
-
     .card:hover {
-      transform: translateY(-15px) scale(1.04);
-      box-shadow: 0 25px 50px rgba(212,175,55,0.25);
-      border-color: #D4AF37;
+      transform: translateY(-25px) scale(1.04);
+      box-shadow: 0 40px 80px rgba(212,175,55,0.3);
+      border-color: var(--gold);
     }
     .card img {
       width: 100%;
-      height: 260px;
+      height: 320px;
       object-fit: cover;
       transition: transform 0.8s ease;
     }
     .card:hover img { transform: scale(1.12); }
     .card-content {
-      padding: 1.8rem;
+      padding: 2rem;
       text-align: center;
     }
-    .card h3 {
-      font-size: 1.6rem;
-      margin-bottom: 0.8rem;
-      color: white;
+    .card h3 { font-size: 1.75rem; margin-bottom: 0.8rem; }
+    .price { font-size: 1.85rem; color: var(--gold); font-weight: 700; }
+
+    /* MODAL */
+    .modal {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95); z-index: 10000; align-items: center; justify-content: center;
     }
-    .card p {
-      color: #bbb;
-      margin-bottom: 1rem;
+    .modal-content {
+      background: #111; max-width: 620px; width: 90%; border-radius: 20px;
+      padding: 2rem; border: 1px solid var(--gold);
     }
-    .price {
-      font-size: 1.8rem;
-      color: #D4AF37;
-      font-weight: 700;
-    }
+    .close { float: right; font-size: 2rem; cursor: pointer; color: var(--gold); }
 
     footer {
       text-align: center;
-      padding: 4rem 1rem;
-      background: #0b0b0b;
+      padding: 6rem 1rem;
+      background: #000;
       color: #777;
-      font-size: 0.95rem;
     }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 3.5rem; }
-      .btn { padding: 0.9rem 2rem; font-size: 1rem; }
-    }
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(60px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes glow { 0% { opacity: 0.6; } 100% { opacity: 1; } }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="#collection">Collection</a>
+    <a href="about.html">Our Story</a>
+    <a href="#">Enquire</a>
   </nav>
 
   <header>
-    <h1>DESIGNED FOR LIGHT.<br>BUILT FOR LIFE.</h1>
-    <p class="tagline">Luxury technology crafted for modern living.</p>
     <div>
-      <a href="#products" class="btn">Explore Products</a>
-      <a href="about.html" class="btn btn-outline">Discover Our Story</a>
+      <h1>DESIGNED FOR LIGHT.<br>BUILT FOR LIFE.</h1>
+      <p class="tagline">Ultra-luxury furniture & lighting, handcrafted for the world's most discerning homes.</p>
+      <a href="#collection" class="btn">Explore the Collection</a>
     </div>
   </header>
 
-  <section class="products" id="products">
+  <section id="collection">
     <h2>Signature Collection</h2>
     <div class="grid">
 
-      <div class="card">
-        <img src="https://picsum.photos/id/1015/800/600" alt="Lumina Lamp">
+      <div class="card" onclick="showModal(0)">
+        <img src="https://picsum.photos/id/1015/800/600" alt="Zénith Chandelier">
         <div class="card-content">
-          <h3>AETHERA LUMINA LAMP</h3>
-          <p>Adaptive circadian lighting in crystal form</p>
-          <div class="price">₹1,29,900</div>
+          <h3>AETHERA ZÉNITH CHANDELIER</h3>
+          <p>Baccarat-inspired crystal with 24K gold</p>
+          <div class="price">₹12,99,900</div>
         </div>
       </div>
 
-      <div class="card">
-        <img src="https://picsum.photos/id/160/800/600" alt="Orbit Speaker">
+      <div class="card" onclick="showModal(1)">
+        <img src="https://picsum.photos/id/160/800/600" alt="Orbit Sofa">
         <div class="card-content">
-          <h3>AETHERA ORBIT SPEAKER</h3>
-          <p>360° spatial audio – invisible elegance</p>
-          <div class="price">₹2,49,900</div>
+          <h3>AETHERA ORBIT SOFA</h3>
+          <p>Italian full-grain leather, Roche Bobois inspired</p>
+          <div class="price">₹5,99,900</div>
         </div>
       </div>
 
-      <div class="card">
-        <img src="https://picsum.photos/id/201/800/600" alt="Nova Watch">
+      <div class="card" onclick="showModal(2)">
+        <img src="https://picsum.photos/id/201/800/600" alt="Nova Dining">
         <div class="card-content">
-          <h3>AETHERA NOVA WATCH</h3>
-          <p>Precision time with smart wellness</p>
-          <div class="price">₹89,900</div>
+          <h3>AETHERA NOVA DINING TABLE</h3>
+          <p>Calacatta marble with gold inlay</p>
+          <div class="price">₹6,49,900</div>
         </div>
       </div>
 
-      <div class="card">
-        <img src="https://picsum.photos/id/237/800/600" alt="Aura Diffuser">
+      <div class="card" onclick="showModal(3)">
+        <img src="https://picsum.photos/id/237/800/600" alt="Aura Armchair">
         <div class="card-content">
-          <h3>AETHERA AURA DIFFUSER</h3>
-          <p>Mood lighting & ambient scent fusion</p>
-          <div class="price">₹74,900</div>
+          <h3>AETHERA AURA ARMCHAIR</h3>
+          <p>Poltrona Frau leather, hand-stitched</p>
+          <div class="price">₹2,99,900</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(4)">
+        <img src="https://picsum.photos/id/29/800/600" alt="Veil Console">
+        <div class="card-content">
+          <h3>AETHERA VEIL CONSOLE</h3>
+          <p>Brushed brass & black marble</p>
+          <div class="price">₹3,49,900</div>
+        </div>
+      </div>
+
+      <div class="card" onclick="showModal(5)">
+        <img src="https://picsum.photos/id/251/800/600" alt="Arc Bed">
+        <div class="card-content">
+          <h3>AETHERA ARC KING BED</h3>
+          <p>Hand-carved walnut with integrated lighting</p>
+          <div class="price">₹7,49,900</div>
         </div>
       </div>
 
     </div>
   </section>
 
+  <!-- SIMPLE MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">×</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
   <footer>
-    © 2026 AETHERA – Crafted in Hyderabad by boddu
+    © 2026 AETHERA • Hyderabad • Crafted for those who accept only the finest
   </footer>
 
+  <script>
+    const products = [
+      {title:"AETHERA ZÉNITH CHANDELIER", price:"₹12,99,900", desc:"Hand-blown crystal with 24K gold accents. Inspired by Baccarat.", specs:"24 lights • Crystal • Gold finish"},
+      {title:"AETHERA ORBIT SOFA", price:"₹5,99,900", desc:"Full-grain Italian leather. Roche Bobois level comfort.", specs:"3-seater • Modular • Lifetime leather warranty"},
+      {title:"AETHERA NOVA DINING TABLE", price:"₹6,49,900", desc:"Calacatta marble top with solid brass base.", specs:"Seats 8–10 • Imported marble"},
+      {title:"AETHERA AURA ARMCHAIR", price:"₹2,99,900", desc:"Poltrona Frau leather, hand-stitched.", specs:"Ergonomic • Solid walnut legs"},
+      {title:"AETHERA VEIL CONSOLE", price:"₹3,49,900", desc:"Brushed brass frame with black marble top.", specs:"Floating design • Hidden storage"},
+      {title:"AETHERA ARC KING BED", price:"₹7,49,900", desc:"Hand-carved walnut with integrated LED lighting.", specs:"King size • Built-in reading lights"}
+    ];
+
+    function showModal(i) {
+      const p = products[i];
+      document.getElementById('modal-body').innerHTML = `
+        <h2 style="color:#D4AF37; margin-bottom:1rem;">${p.title}</h2>
+        <p style="font-size:1.3rem; margin:1rem 0;">${p.desc}</p>
+        <p style="font-size:2.2rem; color:#D4AF37; font-weight:700;">${p.price}</p>
+        <p style="margin:1.5rem 0; color:#aaa;">${p.specs}</p>
+        <button onclick="alert('Enquiry sent! Our team will contact you shortly.')" style="width:100%; padding:1rem; background:#D4AF37; color:#000; border:none; border-radius:999px; font-weight:700; font-size:1.1rem;">Enquire Now</button>
+      `;
+      document.getElementById('modal').style.display = 'flex';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
