@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AETHERA • Timeless Luxury Interiors</title>
-  <meta name="description" content="Ultra-luxury furniture & lighting for elite residences. Bentley • Fendi • Boca do Lobo inspired. Delhi exclusive.">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <meta name="description" content="Ultra-luxury furniture & lighting for elite residences. Inspired by Bentley Home, Fendi Casa, Boca do Lobo.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --black: #0B0B0B;
@@ -29,32 +29,29 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(11,11,11,0.95);
+      background: rgba(11,11,11,0.92);
       backdrop-filter: blur(20px);
       z-index: 1000;
       padding: 1.8rem 5%;
       display: flex;
       justify-content: center;
-      gap: 2.5rem;
-      border-bottom: 1px solid rgba(198,167,92,0.15);
+      gap: 2.8rem;
+      border-bottom: 1px solid rgba(198,167,92,0.12);
     }
     nav a {
       color: var(--gold);
       text-decoration: none;
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       font-weight: 500;
       transition: all 0.4s ease;
     }
-    nav a:hover {
-      color: var(--ivory);
-      transform: translateY(-2px);
-    }
+    nav a:hover { color: var(--ivory); transform: translateY(-2px); }
 
     /* HERO */
     .hero {
       height: 100vh;
-      min-height: 800px;
-      background: linear-gradient(rgba(11,11,11,0.75), rgba(11,11,11,0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+      min-height: 900px;
+      background: linear-gradient(rgba(11,11,11,0.78), rgba(11,11,11,0.88)), url('https://picsum.photos/id/1015/2000/1300') center/cover no-repeat fixed;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -62,98 +59,99 @@
       position: relative;
     }
     .hero-content {
-      max-width: 920px;
-      padding: 0 20px;
+      max-width: 980px;
+      padding: 0 5%;
     }
     .hero h1 {
-      font-size: clamp(4.5rem, 10vw, 9rem);
+      font-size: clamp(5rem, 12vw, 10.5rem);
       color: var(--gold);
-      line-height: 0.95;
-      margin-bottom: 1.2rem;
+      line-height: 0.92;
+      margin-bottom: 1.4rem;
+      animation: fadeIn 2.2s ease-out;
     }
     .hero p {
-      font-size: 1.85rem;
+      font-size: clamp(1.8rem, 4.5vw, 2.8rem);
       color: var(--ivory);
-      margin-bottom: 3.5rem;
-      opacity: 0.95;
+      margin-bottom: 4rem;
+      opacity: 0.92;
+      animation: fadeIn 2.8s ease-out;
     }
     .btn {
       display: inline-block;
-      padding: 1.35rem 3.8rem;
+      padding: 1.4rem 4rem;
       background: var(--gold);
       color: var(--black);
       font-weight: 600;
-      font-size: 1.15rem;
+      font-size: 1.18rem;
       border-radius: 999px;
       text-decoration: none;
       transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
-      box-shadow: 0 10px 40px rgba(198,167,92,0.3);
+      box-shadow: 0 12px 40px rgba(198,167,92,0.28);
+      margin: 0 1rem 1rem;
     }
     .btn:hover {
-      transform: translateY(-6px) scale(1.05);
-      box-shadow: 0 20px 60px rgba(198,167,92,0.45);
+      transform: translateY(-8px) scale(1.06);
+      box-shadow: 0 25px 70px rgba(198,167,92,0.48);
     }
     .btn-outline {
       background: transparent;
       border: 2px solid var(--gold);
       color: var(--gold);
-      margin-left: 1rem;
     }
     .btn-outline:hover {
       background: var(--gold);
       color: var(--black);
     }
 
-    /* SECTION HEADING */
+    /* SECTION */
+    .section {
+      padding: 12rem 5% 8rem;
+    }
     .section-title {
-      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-size: clamp(3.5rem, 8vw, 6.8rem);
       color: var(--gold);
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 5rem;
+      animation: fadeIn 1.8s ease-out;
     }
 
-    /* COLLECTION GRID */
-    .collection {
-      padding: 10rem 5% 8rem;
-      background: var(--black);
-    }
+    /* GRID */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 3rem;
     }
     .card {
-      background: #111;
-      border: 1px solid #222;
+      background: #0F0F0F;
+      border: 1px solid #1F1F1F;
       border-radius: 20px;
       overflow: hidden;
       transition: all 0.6s cubic-bezier(0.23,1,0.32,1);
       cursor: pointer;
     }
     .card:hover {
-      transform: translateY(-20px) scale(1.04);
-      box-shadow: 0 40px 80px rgba(198,167,92,0.25);
+      transform: translateY(-22px) scale(1.04);
+      box-shadow: 0 45px 90px rgba(198,167,92,0.22);
       border-color: var(--gold);
     }
     .card img {
       width: 100%;
-      height: 380px;
+      height: 400px;
       object-fit: cover;
-      transition: transform 0.8s ease;
+      transition: transform 0.9s ease;
+      loading: lazy;
     }
-    .card:hover img {
-      transform: scale(1.12);
-    }
+    .card:hover img { transform: scale(1.14); }
     .card-body {
-      padding: 2rem;
+      padding: 2.2rem;
       text-align: center;
     }
     .card-body h3 {
-      font-size: 1.75rem;
-      margin-bottom: 0.8rem;
+      font-size: 1.85rem;
+      margin-bottom: 0.9rem;
     }
     .card-body .price {
-      font-size: 1.9rem;
+      font-size: 2rem;
       color: var(--gold);
       font-weight: 600;
     }
@@ -163,33 +161,34 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.96);
+      background: rgba(11,11,11,0.96);
       z-index: 9999;
       align-items: center;
       justify-content: center;
       padding: 20px;
     }
     .modal-content {
-      background: #111;
-      max-width: 980px;
+      background: #0F0F0F;
+      max-width: 1000px;
       width: 100%;
       border-radius: 24px;
       overflow: hidden;
       border: 1px solid var(--gold);
       position: relative;
+      animation: fadeIn 0.6s ease;
     }
     .modal-close {
       position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 3rem;
+      top: 25px;
+      right: 35px;
+      font-size: 3.5rem;
       color: var(--gold);
       cursor: pointer;
       z-index: 10;
     }
     .modal-slider {
       position: relative;
-      height: 520px;
+      height: 540px;
       overflow: hidden;
     }
     .modal-slider img {
@@ -200,156 +199,126 @@
       top: 0;
       left: 0;
       opacity: 0;
-      transition: opacity 0.6s ease;
+      transition: opacity 0.7s ease;
     }
-    .modal-slider img.active {
-      opacity: 1;
-    }
+    .modal-slider img.active { opacity: 1; }
     .slider-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0,0,0,0.6);
-      color: white;
+      background: rgba(0,0,0,0.65);
+      color: var(--gold);
       border: none;
-      width: 50px;
-      height: 50px;
+      width: 55px;
+      height: 55px;
       border-radius: 50%;
       cursor: pointer;
-      font-size: 1.8rem;
+      font-size: 2rem;
       z-index: 5;
     }
-    .slider-btn.left { left: 20px; }
-    .slider-btn.right { right: 20px; }
+    .slider-btn.prev { left: 25px; }
+    .slider-btn.next { right: 25px; }
+    .modal-info {
+      padding: 3rem;
+    }
+    .modal-info h2 {
+      font-size: 3rem;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .modal-info .price {
+      font-size: 2.6rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin: 1.5rem 0;
+    }
+    .modal-info p {
+      font-size: 1.3rem;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+    }
 
     /* GALLERY */
-    .gallery {
-      padding: 8rem 5%;
-      background: #0B0B0B;
-    }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
     }
     .gallery-item {
-      position: relative;
       overflow: hidden;
       border-radius: 16px;
       cursor: pointer;
     }
     .gallery-item img {
       width: 100%;
-      height: 100%;
+      height: 380px;
       object-fit: cover;
-      transition: transform 0.8s ease;
+      transition: transform 0.9s ease;
+      loading: lazy;
     }
-    .gallery-item:hover img {
-      transform: scale(1.12);
-    }
-
-    /* PHILOSOPHY */
-    .philosophy {
-      padding: 10rem 5%;
-      background: var(--black);
-      text-align: center;
-    }
-    .philosophy-content {
-      max-width: 860px;
-      margin: 0 auto;
-      font-size: 1.35rem;
-      color: var(--muted);
-    }
-
-    /* CONSULTATION */
-    .consultation {
-      padding: 10rem 5%;
-      background: linear-gradient(#0B0B0B, #111);
-      text-align: center;
-    }
-    .consultation h2 {
-      margin-bottom: 2rem;
-    }
+    .gallery-item:hover img { transform: scale(1.14); }
 
     footer {
-      background: #0B0B0B;
+      background: var(--black);
       padding: 6rem 5% 3rem;
       text-align: center;
-      border-top: 1px solid #222;
+      border-top: 1px solid #1F1F1F;
     }
-    footer a {
-      color: var(--gold);
-      text-decoration: none;
-    }
+    footer p { color: var(--muted); font-size: 1rem; }
 
-    /* ANIMATIONS */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(60px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .fade-in {
-      animation: fadeInUp 1.2s ease forwards;
-    }
+    @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="#hero">Home</a>
     <a href="#collection">Collection</a>
-    <a href="#chandeliers">Chandeliers</a>
-    <a href="#sofas">Sofas</a>
-    <a href="#tables">Tables</a>
     <a href="#gallery">Gallery</a>
+    <a href="#philosophy">Philosophy</a>
     <a href="#consultation">Consultation</a>
   </nav>
 
-  <!-- HERO -->
   <section id="hero" class="hero">
     <div class="hero-content">
       <h1>AETHERA</h1>
       <p>Timeless Luxury Interiors</p>
-      <div style="margin-top: 3rem;">
+      <div style="margin-top:4rem;">
         <a href="#collection" class="btn">Explore Collection</a>
         <a href="#consultation" class="btn btn-outline">Book Private Consultation</a>
       </div>
     </div>
   </section>
 
-  <!-- COLLECTION -->
-  <section id="collection" class="collection">
+  <section id="collection" class="section">
     <h2 class="section-title">Signature Collection</h2>
     <div class="grid" id="product-grid"></div>
   </section>
 
-  <!-- GALLERY -->
-  <section id="gallery" class="gallery">
+  <section id="gallery" class="section gallery">
     <h2 class="section-title">Interior Gallery</h2>
     <div class="gallery-grid" id="gallery-grid"></div>
   </section>
 
-  <!-- PHILOSOPHY -->
-  <section class="philosophy">
+  <section id="philosophy" class="section philosophy">
     <h2 class="section-title">Our Philosophy</h2>
     <div class="philosophy-content">
-      <p>AETHERA is more than furniture — it is sculptural art for the home. Every piece is hand-selected from the world's finest ateliers, inspired by Bentley Home, Fendi Casa and Boca do Lobo. We believe in timeless design, exceptional materials, and uncompromising craftsmanship.</p>
-      <p>Our clients in Delhi, Gurgaon and Mumbai choose AETHERA because they want their homes to tell a story of legacy, not trend.</p>
+      <p>AETHERA curates sculptural furniture and lighting that elevate elite residences to works of art. Inspired by Bentley Home, Fendi Casa, and Boca do Lobo, every piece embodies exceptional craftsmanship, rare materials, and timeless design.</p>
+      <p>We partner with master artisans in Italy and beyond to create limited-edition masterpieces that become family legacies — not fleeting trends.</p>
+      <p>For the discerning few who demand perfection in every detail.</p>
     </div>
   </section>
 
-  <!-- CONSULTATION -->
-  <section id="consultation" class="consultation">
-    <h2 class="section-title">Design Your Dream Interior</h2>
-    <p style="font-size:1.6rem; max-width:700px; margin:0 auto 3rem; color:var(--muted);">Private consultation with our curators. We will visit your residence and create a bespoke plan.</p>
-    <a href="#" onclick="alert('Consultation request received. Our team will contact you within 24 hours.')" class="btn" style="font-size:1.3rem; padding:1.6rem 5rem;">Book Private Consultation</a>
+  <section id="consultation" class="section consultation">
+    <h2 class="section-title">Design Your Legacy</h2>
+    <p style="font-size:1.7rem; max-width:780px; margin:0 auto 4rem; color:var(--muted); text-align:center;">Private consultation with our curators. We visit your residence to craft a bespoke vision of timeless luxury.</p>
+    <a href="#" onclick="alert('Consultation request received. Our team will contact you within 24 hours.')" class="btn" style="font-size:1.35rem; padding:1.6rem 5.5rem;">Book Private Consultation</a>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <p style="font-size:1.1rem; margin-bottom:1rem;">AETHERA • Timeless Luxury Interiors</p>
-    <p style="color:var(--muted); font-size:0.95rem;">Hyderabad • Delhi NCR • 2026</p>
-    <p style="margin-top:3rem; font-size:0.9rem; color:var(--muted);">© All rights reserved. Crafted for legacy.</p>
+    <p>AETHERA • Timeless Luxury Interiors</p>
+    <p style="margin-top:1rem;">Hyderabad • Delhi NCR • 2026</p>
+    <p style="margin-top:4rem; font-size:0.95rem; color:var(--muted);">© All rights reserved. Crafted for eternity.</p>
   </footer>
 
   <!-- PRODUCT MODAL -->
@@ -357,13 +326,13 @@
     <div class="modal-content">
       <span class="modal-close" onclick="closeModal()">×</span>
       <div class="modal-slider" id="modal-slider"></div>
-      <div style="padding:2.5rem;">
-        <h2 id="modal-title" style="font-size:2.6rem; color:var(--gold); margin-bottom:1rem;"></h2>
-        <p id="modal-desc" style="font-size:1.25rem; color:#ddd; margin-bottom:2rem;"></p>
-        <p id="modal-price" style="font-size:2.4rem; color:var(--gold); font-weight:600; margin-bottom:2rem;"></p>
-        <div id="modal-specs" style="margin-bottom:2.5rem; line-height:1.8;"></div>
+      <div class="modal-info">
+        <h2 id="modal-title"></h2>
+        <p id="modal-desc"></p>
+        <div class="price" id="modal-price"></div>
+        <div id="modal-specs"></div>
         <button onclick="alert('Consultation request sent. Our curator will contact you shortly.')" 
-                style="width:100%; padding:1.4rem; background:var(--gold); color:#000; border:none; border-radius:999px; font-weight:700; font-size:1.25rem;">
+                style="width:100%; padding:1.5rem; background:var(--gold); color:var(--black); border:none; border-radius:999px; font-weight:700; font-size:1.3rem; cursor:pointer;">
           Request Private Consultation
         </button>
       </div>
@@ -371,128 +340,119 @@
   </div>
 
   <script>
-    // 50 PRODUCTS
     const products = [
-      {id:0, name:"Zenith Crystal Chandelier", price:"₹1,45,00,000", desc:"Multi-tier hand-blown crystal masterpiece with 24K gold accents.", specs:"Height: 180cm • 48 lights • Pure crystal • Made-to-order", images:["https://picsum.photos/id/1015/1200/900","https://picsum.photos/id/1016/1200/900","https://picsum.photos/id/1018/1200/900"]},
-      {id:1, name:"Aurora Halo Chandelier", price:"₹62,00,000", desc:"Floating halo of hand-cut crystal with warm LED core.", specs:"Diameter: 140cm • Dimmable • Gold finish"},
-      {id:2, name:"Lumina Cascade Chandelier", price:"₹85,00,000", desc:"Cascading crystal tiers with diamond-cut prisms.", specs:"Height: 220cm • 36 lights"},
-      {id:3, name:"Infinity Ring Chandelier", price:"₹48,00,000", desc:"Endless ring of illuminated crystal.", specs:"Diameter: 160cm"},
-      {id:4, name:"Celestia Drop Chandelier", price:"₹72,00,000", desc:"Dramatic drop design with 24K gold chains.", specs:"Height: 240cm"},
-      {id:5, name:"Imperial Palace Chandelier", price:"₹1,10,00,000", desc:"Palace-scale grand crystal chandelier.", specs:"Height: 280cm • 64 lights"},
-      {id:6, name:"Milano Crystal Cluster", price:"₹55,00,000", desc:"Modern Italian cluster design.", specs:"Diameter: 130cm"},
-      {id:7, name:"Vienna Spiral Chandelier", price:"₹63,00,000", desc:"Spiral crystal with gold spiral frame.", specs:"Height: 190cm"},
-      {id:8, name:"Aurelius Gold Ring", price:"₹44,00,000", desc:"Minimal gold ring with crystal accents.", specs:"Diameter: 110cm"},
-      {id:9, name:"Venetian Grand Crystal", price:"₹92,00,000", desc:"Venetian-inspired grand crystal masterpiece.", specs:"Height: 260cm"},
-      {id:10, name:"Bubble Curve Sofa", price:"₹10,50,000", desc:"Iconic curved modular sofa in premium Italian leather.", specs:"3-seater modular • Lifetime leather warranty"},
-      {id:11, name:"Milano Velvet Sofa", price:"₹8,20,000", desc:"Luxurious velvet with sculpted arms.", specs:"Deep seating • Custom fabric"},
-      {id:12, name:"Cloud Modular Sofa", price:"₹9,80,000", desc:"Ultra-plush cloud modular system.", specs:"Configurable • Down-filled"},
-      {id:13, name:"Luna Sculptural Sofa", price:"₹11,20,000", desc:"Sculptural curved design in velvet.", specs:"Statement piece"},
-      {id:14, name:"Opulence Lounge Sofa", price:"₹7,90,000", desc:"Opulent lounge with gold legs.", specs:"Hand-tufted"},
-      {id:15, name:"Florence Leather Sofa", price:"₹9,10,000", desc:"Italian full-grain leather sofa.", specs:"Hand-stitched"},
-      {id:16, name:"Monaco Curved Sofa", price:"₹8,60,000", desc:"Monaco-inspired curved elegance.", specs:"Modular"},
-      {id:17, name:"Imperia Velvet Lounge", price:"₹12,30,000", desc:"Imperial velvet lounge sofa.", specs:"High-density foam"},
-      {id:18, name:"Aurora Designer Sofa", price:"₹10,10,000", desc:"Aurora gradient velvet design.", specs:"Custom color"},
-      {id:19, name:"Bentley Inspired Sofa", price:"₹14,20,000", desc:"Bentley Home level luxury sofa.", specs:"Premium leather"},
-      {id:20, name:"Nova Marble Dining Table", price:"₹9,50,000", desc:"Calacatta gold marble with brass base.", specs:"Seats 10 • Extendable"},
-      {id:21, name:"Onyx Aura Table", price:"₹7,40,000", desc:"Black onyx with gold inlay.", specs:"Seats 8"},
-      {id:22, name:"Eclipse Glass Dining Table", price:"₹6,20,000", desc:"Tempered glass with sculptural base.", specs:"Seats 10"},
-      {id:23, name:"Titan Marble Console", price:"₹5,30,000", desc:"Heavy marble console with gold legs.", specs:"Floating design"},
-      {id:24, name:"Nero Italian Marble Table", price:"₹8,90,000", desc:"Nero Marquina marble dining table.", specs:"Seats 12"},
-      {id:25, name:"Arc King Bed", price:"₹11,20,000", desc:"Sculptural walnut headboard with LED.", specs:"King size"},
-      {id:26, name:"Milano Luxury Bed", price:"₹9,70,000", desc:"Italian leather upholstered bed.", specs:"Storage base"},
-      {id:27, name:"Imperial Leather Bed", price:"₹10,50,000", desc:"Imperial tufted leather bed.", specs:"King"},
-      {id:28, name:"Velvet Halo Bed", price:"₹8,30,000", desc:"Velvet halo headboard design.", specs:"King"},
-      {id:29, name:"Royal Crest Bed", price:"₹12,80,000", desc:"Royal crest carved headboard.", specs:"King"},
-      {id:30, name:"Aurelia Coffee Table", price:"₹4,20,000", desc:"Marble top with gold base.", specs:"Sculptural"},
-      {id:31, name:"Celeste Marble Table", price:"₹3,80,000", desc:"Celeste marble coffee table.", specs:"Low profile"},
-      {id:32, name:"Verona Glass Table", price:"₹3,40,000", desc:"Verona tempered glass table.", specs:"Minimal"},
-      {id:33, name:"Titan Gold Coffee Table", price:"₹5,10,000", desc:"Gold-veined marble with gold legs.", specs:"Heavy base"},
-      {id:34, name:"Infinity Marble Coffee Table", price:"₹4,60,000", desc:"Infinity marble low table.", specs:"Floating"},
-      {id:35, name:"Crystal Floor Lamp", price:"₹2,40,000", desc:"Hand-blown crystal floor lamp.", specs:"Dimmable"},
-      {id:36, name:"Gold Arc Floor Lamp", price:"₹2,10,000", desc:"Gold arc with crystal shade.", specs:"Adjustable"},
-      {id:37, name:"Luxury Wall Mirror", price:"₹3,50,000", desc:"Antique gold frame mirror.", specs:"Large"},
-      {id:38, name:"Designer Console", price:"₹4,30,000", desc:"Designer console in brass.", specs:"Floating"},
-      {id:39, name:"Venetian Decor Mirror", price:"₹2,70,000", desc:"Venetian style decorative mirror.", specs:"Hand-crafted"},
-      {id:40, name:"Halo Pendant Light", price:"₹1,60,000", desc:"Floating halo pendant.", specs:"Dimmable"},
-      {id:41, name:"Nova Ring Light", price:"₹1,90,000", desc:"Nova ring pendant light.", specs:"Modern"},
-      {id:42, name:"Aura Ceiling Light", price:"₹1,40,000", desc:"Aura flush mount ceiling light.", specs:"Warm glow"},
-      {id:43, name:"Eclipse Pendant", price:"₹2,20,000", desc:"Eclipse pendant with crystal.", specs:"Adjustable"},
-      {id:44, name:"Titan Gold Light", price:"₹2,80,000", desc:"Titan gold floor/pendant light.", specs:"Statement piece"},
-      {id:45, name:"Luxury Ottoman", price:"₹1,80,000", desc:"Luxury ottoman in velvet.", specs:"Storage"},
-      {id:46, name:"Velvet Lounge Chair", price:"₹3,90,000", desc:"Velvet lounge chair with gold legs.", specs:"Accent"},
-      {id:47, name:"Imperial Accent Chair", price:"₹4,60,000", desc:"Imperial accent chair.", specs:"Hand-tufted"},
-      {id:48, name:"Designer Bench", price:"₹3,10,000", desc:"Designer bench in leather.", specs:"Entryway"},
-      {id:49, name:"Luxe Marble Side Table", price:"₹2,90,000", desc:"Luxe marble side table.", specs:"Gold base"}
+      {name:"Zenith Crystal Chandelier", price:"₹1,45,00,000", desc:"Multi-tier hand-blown crystal masterpiece with 24K gold accents – pure opulence.", specs:"Height: 180–240cm • 48 lights • Pure crystal • Custom gold finish"},
+      {name:"Aurora Halo Chandelier", price:"₹62,00,000", desc:"Floating halo of hand-cut crystal with warm LED core – ethereal glow.", specs:"Diameter: 140cm • Dimmable • Champagne gold"},
+      {name:"Lumina Cascade Chandelier", price:"₹85,00,000", desc:"Cascading crystal tiers with diamond-cut prisms – dramatic descent.", specs:"Height: 220cm • 36 lights"},
+      {name:"Infinity Ring Chandelier", price:"₹48,00,000", desc:"Endless illuminated crystal ring – modern infinity.", specs:"Diameter: 160cm • LED"},
+      {name:"Celestia Drop Chandelier", price:"₹72,00,000", desc:"Dramatic drop design with 24K gold chains – sculptural.", specs:"Height: 240cm"},
+      {name:"Imperial Palace Chandelier", price:"₹1,10,00,000", desc:"Palace-scale grand crystal – regal presence.", specs:"Height: 280cm • 64 lights"},
+      {name:"Milano Crystal Cluster", price:"₹55,00,000", desc:"Contemporary Italian cluster – refined clusters.", specs:"Diameter: 130cm"},
+      {name:"Vienna Spiral Chandelier", price:"₹63,00,000", desc:"Spiral crystal with gold frame – dynamic motion.", specs:"Height: 190cm"},
+      {name:"Aurelius Gold Ring", price:"₹44,00,000", desc:"Minimal gold ring with crystal accents – understated luxury.", specs:"Diameter: 110cm"},
+      {name:"Venetian Grand Crystal", price:"₹92,00,000", desc:"Venetian-inspired grand masterpiece – historical elegance.", specs:"Height: 260cm"},
+      {name:"Bubble Curve Sofa", price:"₹10,50,000", desc:"Iconic curved modular in premium Italian leather – sculptural comfort.", specs:"3-seater modular • Lifetime leather"},
+      {name:"Milano Velvet Sofa", price:"₹8,20,000", desc:"Luxurious velvet with sculpted arms – soft opulence.", specs:"Deep seating • Custom velvet"},
+      {name:"Cloud Modular Sofa", price:"₹9,80,000", desc:"Ultra-plush cloud modular system – cloud-like embrace.", specs:"Configurable • Down-filled"},
+      {name:"Luna Sculptural Sofa", price:"₹11,20,000", desc:"Sculptural curved design in velvet – artistic form.", specs:"Statement piece"},
+      {name:"Opulence Lounge Sofa", price:"₹7,90,000", desc:"Opulent lounge with gold legs – lavish relaxation.", specs:"Hand-tufted"},
+      {name:"Florence Leather Sofa", price:"₹9,10,000", desc:"Italian full-grain leather sofa – timeless Italian craft.", specs:"Hand-stitched"},
+      {name:"Monaco Curved Sofa", price:"₹8,60,000", desc:"Monaco-inspired curved elegance – Riviera luxury.", specs:"Modular"},
+      {name:"Imperia Velvet Lounge", price:"₹12,30,000", desc:"Imperial velvet lounge sofa – regal comfort.", specs:"High-density foam"},
+      {name:"Aurora Designer Sofa", price:"₹10,10,000", desc:"Aurora gradient velvet design – light play.", specs:"Custom color"},
+      {name:"Bentley Inspired Sofa", price:"₹14,20,000", desc:"Bentley Home level luxury sofa – automotive elegance.", specs:"Premium leather"},
+      {name:"Nova Marble Dining Table", price:"₹9,50,000", desc:"Calacatta gold marble with brass base – sculptural dining.", specs:"Seats 10 • Extendable"},
+      {name:"Onyx Aura Table", price:"₹7,40,000", desc:"Black onyx with gold inlay – mysterious aura.", specs:"Seats 8"},
+      {name:"Eclipse Glass Dining Table", price:"₹6,20,000", desc:"Tempered glass with sculptural base – modern transparency.", specs:"Seats 10"},
+      {name:"Titan Marble Console", price:"₹5,30,000", desc:"Heavy marble console with gold legs – monumental.", specs:"Floating design"},
+      {name:"Nero Italian Marble Table", price:"₹8,90,000", desc:"Nero Marquina marble dining table – deep black luxury.", specs:"Seats 12"},
+      {name:"Arc King Bed", price:"₹11,20,000", desc:"Sculptural walnut headboard with LED – modern serenity.", specs:"King size"},
+      {name:"Milano Luxury Bed", price:"₹9,70,000", desc:"Italian leather upholstered bed – refined sleep.", specs:"Storage base"},
+      {name:"Imperial Leather Bed", price:"₹10,50,000", desc:"Imperial tufted leather bed – regal rest.", specs:"King"},
+      {name:"Velvet Halo Bed", price:"₹8,30,000", desc:"Velvet halo headboard design – soft embrace.", specs:"King"},
+      {name:"Royal Crest Bed", price:"₹12,80,000", desc:"Royal crest carved headboard – heritage luxury.", specs:"King"},
+      {name:"Aurelia Coffee Table", price:"₹4,20,000", desc:"Marble top with gold base – elegant accent.", specs:"Sculptural"},
+      {name:"Celeste Marble Table", price:"₹3,80,000", desc:"Celeste marble coffee table – celestial touch.", specs:"Low profile"},
+      {name:"Verona Glass Table", price:"₹3,40,000", desc:"Verona tempered glass table – clean minimalism.", specs:"Minimal"},
+      {name:"Titan Gold Coffee Table", price:"₹5,10,000", desc:"Gold-veined marble with gold legs – bold statement.", specs:"Heavy base"},
+      {name:"Infinity Marble Coffee Table", price:"₹4,60,000", desc:"Infinity marble low table – endless elegance.", specs:"Floating"},
+      {name:"Crystal Floor Lamp", price:"₹2,40,000", desc:"Hand-blown crystal floor lamp – sparkling presence.", specs:"Dimmable"},
+      {name:"Gold Arc Floor Lamp", price:"₹2,10,000", desc:"Gold arc with crystal shade – dramatic curve.", specs:"Adjustable"},
+      {name:"Luxury Wall Mirror", price:"₹3,50,000", desc:"Antique gold frame mirror – reflective opulence.", specs:"Large"},
+      {name:"Designer Console", price:"₹4,30,000", desc:"Designer console in brass – sculptural entry.", specs:"Floating"},
+      {name:"Venetian Decor Mirror", price:"₹2,70,000", desc:"Venetian style decorative mirror – historical charm.", specs:"Hand-crafted"},
+      {name:"Halo Pendant Light", price:"₹1,60,000", desc:"Floating halo pendant – modern elegance.", specs:"Dimmable"},
+      {name:"Nova Ring Light", price:"₹1,90,000", desc:"Nova ring pendant light – contemporary glow.", specs:"Modern"},
+      {name:"Aura Ceiling Light", price:"₹1,40,000", desc:"Aura flush mount ceiling light – warm ambiance.", specs:"Warm glow"},
+      {name:"Eclipse Pendant", price:"₹2,20,000", desc:"Eclipse pendant with crystal – mysterious light.", specs:"Adjustable"},
+      {name:"Titan Gold Light", price:"₹2,80,000", desc:"Titan gold floor/pendant light – monumental.", specs:"Statement piece"},
+      {name:"Luxury Ottoman", price:"₹1,80,000", desc:"Luxury ottoman in velvet – versatile comfort.", specs:"Storage"},
+      {name:"Velvet Lounge Chair", price:"₹3,90,000", desc:"Velvet lounge chair with gold legs – accent luxury.", specs:"Accent"},
+      {name:"Imperial Accent Chair", price:"₹4,60,000", desc:"Imperial accent chair – regal detail.", specs:"Hand-tufted"},
+      {name:"Designer Bench", price:"₹3,10,000", desc:"Designer bench in leather – entryway elegance.", specs:"Entryway"},
+      {name:"Luxe Marble Side Table", price:"₹2,90,000", desc:"Luxe marble side table – refined companion.", specs:"Gold base"}
     ];
 
-    // Render product grid
     function renderProducts() {
       const grid = document.getElementById('product-grid');
-      grid.innerHTML = '';
-      products.forEach(product => {
+      products.forEach(p => {
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-          <img src="\( {product.images ? product.images[0] : 'https://picsum.photos/id/' + (100 + product.id) + '/1200/900'}" alt=" \){product.name}">
+          <img src="https://picsum.photos/id/\( {100 + p.id}/1200/900" alt=" \){p.name}" loading="lazy">
           <div class="card-body">
-            <h3>${product.name}</h3>
-            <div class="price">${product.price}</div>
+            <h3>${p.name}</h3>
+            <div class="price">${p.price}</div>
           </div>
         `;
-        card.onclick = () => openProductModal(product);
+        card.onclick = () => openModal(p);
         grid.appendChild(card);
       });
     }
 
-    // Gallery images (luxury interiors)
-    const galleryImages = [
-      "https://picsum.photos/id/1015/800/600", "https://picsum.photos/id/160/800/600",
-      "https://picsum.photos/id/201/800/600", "https://picsum.photos/id/237/800/600",
-      "https://picsum.photos/id/251/800/600", "https://picsum.photos/id/29/800/600",
-      "https://picsum.photos/id/180/800/600", "https://picsum.photos/id/106/800/600"
-    ];
-
     function renderGallery() {
       const grid = document.getElementById('gallery-grid');
-      galleryImages.forEach(src => {
-        const div = document.createElement('div');
-        div.className = 'gallery-item';
-        div.innerHTML = `<img src="${src}" alt="Luxury Interior" loading="lazy">`;
-        div.onclick = () => openLightbox(src);
-        grid.appendChild(div);
+      const images = [
+        "https://picsum.photos/id/1015/800/600", "https://picsum.photos/id/160/800/600",
+        "https://picsum.photos/id/201/800/600", "https://picsum.photos/id/237/800/600",
+        "https://picsum.photos/id/251/800/600", "https://picsum.photos/id/29/800/600",
+        "https://picsum.photos/id/180/800/600", "https://picsum.photos/id/106/800/600"
+      ];
+      images.forEach(src => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        item.innerHTML = `<img src="${src}" alt="Luxury Interior" loading="lazy">`;
+        item.onclick = () => {
+          const lb = document.createElement('div');
+          lb.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.98);display:flex;align-items:center;justify-content:center;z-index:10000;';
+          lb.innerHTML = `
+            <img src="${src}" style="max-width:92%;max-height:92%;border-radius:12px;box-shadow:0 0 60px rgba(198,167,92,0.3);">
+            <span onclick="this.parentElement.remove()" style="position:absolute;top:30px;right:30px;font-size:3rem;color:#C6A75C;cursor:pointer;">×</span>
+          `;
+          document.body.appendChild(lb);
+        };
+        grid.appendChild(item);
       });
     }
 
-    // Product Modal
     let currentProduct = null;
-    let currentImageIndex = 0;
-
-    function openProductModal(product) {
-      currentProduct = product;
-      currentImageIndex = 0;
-      document.getElementById('modal-title').textContent = product.name;
-      document.getElementById('modal-desc').textContent = product.desc;
-      document.getElementById('modal-price').textContent = product.price;
-      document.getElementById('modal-specs').innerHTML = `
-        <p><strong>Materials:</strong> Italian leather / Hand-blown crystal / Calacatta marble</p>
-        <p><strong>Dimensions:</strong> Customisable • Made-to-order in Italy</p>
-      `;
-      renderModalSlider();
+    function openModal(p) {
+      currentProduct = p;
+      document.getElementById('modal-title').textContent = p.name;
+      document.getElementById('modal-desc').textContent = p.desc;
+      document.getElementById('modal-price').textContent = p.price;
+      document.getElementById('modal-specs').innerHTML = `<p><strong>Materials:</strong> Italian leather / Crystal / Marble</p><p><strong>Dimensions:</strong> Custom • Made-to-order</p>`;
       document.getElementById('product-modal').style.display = 'flex';
     }
 
-    function renderModalSlider() {
-      const slider = document.getElementById('modal-slider');
-      slider.innerHTML = '';
-      const images = currentProduct.images || ['https://picsum.photos/id/' + (100 + currentProduct.id) + '/1200/900'];
-      images.forEach((imgSrc, i) => {
-        const img = document.createElement('img');
-        img.src = imgSrc;
-        img.style.opacity = (i === 0) ? '1' : '0';
-        img.classList.add('active');
-        slider.appendChild(img);
-      });
+    function closeModal() {
+      document.getElementById('product-modal').style.display = 'none';
     }
 
-    function closeModal() {
-      document.getElementById('product-modal').s
+    window.onload = () => {
+      renderProducts();
+      renderGallery();
+    };
+  </script>
+</body>
+</html>
